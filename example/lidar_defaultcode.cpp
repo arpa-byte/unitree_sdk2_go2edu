@@ -1,0 +1,78 @@
+#include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/point_cloud2.hpp>
+#include <thread>
+
+// CORRECT INCLUDES FROM THE DOCUMENTATION
+#include "unitree/robot/channel/channel_subscriber.hpp"
+#include "unitree/robot/channel/channel_factory.hpp"
+#include "unitree/idl/ros2/PointCloud2_.hpp" // This is the crucial header
+
+class LidarToROS2Node : public rclcpp::Node
+{
+public:
+    LidarToROS2Node(const std::string& interface_name) : Node("go2_lidar_publisher")
+    {
+        publisher_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/lidar/point_cloud", 10);
+        RCLCPP_INFO(this->get_logger(), "LiDAR publisher node started, publishing on /lidar/point_cloud");
+
+        unitree::robot::ChannelFactory::Instance()->Init(0, interface_name);
+
+        lidar_subscriber_ = std::make_shared<unitree::robot::ChannelSubscriber<sensor_msgs::msg::dds_::PointCloud2_>>(
+            "rt/utlidar/cloud");
+        
+        lidar_subscriber_->InitChannel([this](const void* message) {
+            this->LidarCallback(message);
+        });
+    }
+
+private:
+    void LidarCallback(const void* message)
+    {
+        auto dds_msg = static_cast<const sensor_msgs::msg::dds_::PointCloud2_*>(message);
+        auto ros2_msg = std::make_unique<sensor_msgs::msg::PointCloud2>();
+
+        ros2_msg->header.stamp.sec = dds_msg->header().stamp().sec();
+        ros2_msg->header.stamp.nanosec = dds_msg->header().stamp().nanosec();
+        ros2_msg->header.frame_id = dds_msg->header().frame_id();
+        ros2_msg->height = dds_msg->height();
+        ros2_msg->width = dds_msg->width();
+        
+        // *** THE CRITICAL FIX IS HERE ***
+        // We cannot directly assign the fields vector. We must copy it element by element.
+        ros2_msg->fields.resize(dds_msg->fields().size());
+        for (size_t i = 0; i < dds_msg->fields().size(); ++i)
+        {
+            ros2_msg->fields[i].name = dds_msg->fields()[i].name();
+            ros2_msg->fields[i].offset = dds_msg->fields()[i].offset();
+            ros2_msg->fields[i].datatype = dds_msg->fields()[i].datatype();
+            ros2_msg->fields[i].count = dds_msg->fields()[i].count();
+        }
+
+        ros2_msg->is_bigendian = dds_msg->is_bigendian();
+        ros2_msg->point_step = dds_msg->point_step();
+        ros2_msg->row_step = dds_msg->row_step();
+        ros2_msg->data = dds_msg->data();
+        ros2_msg->is_dense = dds_msg->is_dense();
+
+        publisher_->publish(std::move(ros2_msg));
+        RCLCPP_INFO_ONCE(this->get_logger(), "Receiving and publishing LiDAR data!");
+    }
+
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr publisher_;
+    std::shared_ptr<unitree::robot::ChannelSubscriber<sensor_msgs::msg::dds_::PointCloud2_>> lidar_subscriber_;
+};
+
+int main(int argc, char** argv)
+{
+    if (argc < 2)
+    {
+        std::cout << "Usage: " << argv[0] << " network_interface (e.g., enp7s0)" << std::endl;
+        return 1;
+    }
+
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<LidarToROS2Node>(argv[1]);
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
