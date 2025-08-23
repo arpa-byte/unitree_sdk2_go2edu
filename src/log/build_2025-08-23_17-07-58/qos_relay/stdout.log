@@ -1,0 +1,35 @@
+running egg_info
+creating ../build/qos_relay/qos_relay.egg-info
+writing ../build/qos_relay/qos_relay.egg-info/PKG-INFO
+writing dependency_links to ../build/qos_relay/qos_relay.egg-info/dependency_links.txt
+writing entry points to ../build/qos_relay/qos_relay.egg-info/entry_points.txt
+writing requirements to ../build/qos_relay/qos_relay.egg-info/requires.txt
+writing top-level names to ../build/qos_relay/qos_relay.egg-info/top_level.txt
+writing manifest file '../build/qos_relay/qos_relay.egg-info/SOURCES.txt'
+reading manifest file '../build/qos_relay/qos_relay.egg-info/SOURCES.txt'
+writing manifest file '../build/qos_relay/qos_relay.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib/qos_relay
+copying qos_relay/__init__.py -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib/qos_relay
+copying qos_relay/scan_relay_node.py -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib/qos_relay
+running install
+running install_lib
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay
+copying /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib/qos_relay/__init__.py -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay
+copying /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/build/lib/qos_relay/scan_relay_node.py -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay
+byte-compiling /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay/scan_relay_node.py to scan_relay_node.cpython-310.pyc
+running install_data
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/share/ament_index
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/share/ament_index/resource_index
+creating /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/share/ament_index/resource_index/packages
+copying resource/qos_relay -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/share/ament_index/resource_index/packages
+copying package.xml -> /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/share/qos_relay
+running install_egg_info
+Copying ../build/qos_relay/qos_relay.egg-info to /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/python3.10/site-packages/qos_relay-0.0.0-py3.10.egg-info
+running install_scripts
+Installing scan_relay_node script to /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install/qos_relay/lib/qos_relay
+writing list of installed files to '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/build/qos_relay/install.log'

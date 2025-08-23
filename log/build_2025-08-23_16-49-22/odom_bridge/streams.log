@@ -1,0 +1,76 @@
+[0.024s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/opt/ros/humble /usr/bin/cmake /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge -DCMAKE_INSTALL_PREFIX=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge
+[0.341s] -- The C compiler identification is GNU 11.4.0
+[0.342s] -- The CXX compiler identification is GNU 11.4.0
+[0.342s] -- Detecting C compiler ABI info
+[0.342s] -- Detecting C compiler ABI info - done
+[0.342s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.342s] -- Detecting C compile features
+[0.342s] -- Detecting C compile features - done
+[0.342s] -- Detecting CXX compiler ABI info
+[0.342s] -- Detecting CXX compiler ABI info - done
+[0.344s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.344s] -- Detecting CXX compile features
+[0.349s] -- Detecting CXX compile features - done
+[0.351s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.528s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.642s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.701s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.710s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.721s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.737s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.759s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.834s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.838s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.947s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.980s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.037s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.060s] -- Looking for pthread.h
+[1.151s] -- Looking for pthread.h - found
+[1.151s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.226s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.227s] -- Found Threads: TRUE  
+[1.289s] -- Found nav_msgs: 4.8.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.324s] -- Found tf2: 0.25.12 (/opt/ros/humble/share/tf2/cmake)
+[1.338s] -- Found tf2_ros: 0.25.12 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.456s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.552s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.552s] -- Configured cppcheck include dirs: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include;$<BUILD_INTERFACE:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/include>
+[1.552s] -- Configured cppcheck exclude dirs and/or files: 
+[1.553s] -- Added test 'lint_cmake' to check CMake code style
+[1.554s] -- Added test 'uncrustify' to check C / C++ code style
+[1.554s] -- Configured uncrustify additional arguments: 
+[1.555s] -- Added test 'xmllint' to check XML markup files
+[1.557s] -- Configuring done
+[1.569s] -- Generating done
+[1.573s] -- Build files have been written to: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge
+[1.584s] Invoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/opt/ros/humble /usr/bin/cmake /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge -DCMAKE_INSTALL_PREFIX=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge
+[1.585s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge -- -j12 -l12
+[1.645s] [ 50%] [32mBuilding CXX object CMakeFiles/odom_bridge_node.dir/src/odom_bridge_node.cpp.o[0m
+[1.972s] In file included from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/any.hpp:4[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/json/json.hpp:4[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_qos_policy_parameter.hpp:4[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_qos_parameter.hpp:4[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_parameter.hpp:5[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_factory_model.hpp:4[m[K,
+[1.972s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/robot/channel/channel_factory.hpp:4[m[K,
+[1.973s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/robot/channel/channel_subscriber.hpp:4[m[K,
+[1.973s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/src/odom_bridge_node.cpp:6[m[K:
+[1.973s] [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/exception.hpp:123:37:[m[K [01;35m[Kwarning: [m[KISO C++ does not permit named variadic macros [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wvariadic-macros-Wvariadic-macros]8;;[m[K]
+[1.973s]   123 | #define UT_THROW(ExceptionType, args[01;35m[K...[m[K)    \
+[1.973s]       |                                     [01;35m[K^~~[m[K
+[1.973s] [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/exception.hpp:131:51:[m[K [01;35m[Kwarning: [m[KISO C++ does not permit named variadic macros [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wvariadic-macros-Wvariadic-macros]8;;[m[K]
+[1.973s]   131 | #define UT_THROW_IF(condition, ExceptionType, args[01;35m[K...[m[K)  \
+[1.973s]       |                                                   [01;35m[K^~~[m[K
+[1.973s] In file included from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_topic_channel.hpp:4[m[K,
+[1.973s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_factory_model.hpp:5[m[K,
+[1.974s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/robot/channel/channel_factory.hpp:4[m[K,
+[1.974s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/robot/channel/channel_subscriber.hpp:4[m[K,
+[1.974s]                  from [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/src/odom_bridge_node.cpp:6[m[K:
+[1.974s] [01m[K/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../include/unitree/common/dds/dds_entity.hpp:4:10:[m[K [01;31m[Kfatal error: [m[Kdds/dds.hpp: No such file or directory
+[1.974s]     4 | #include [01;31m[K<dds/dds.hpp>[m[K
+[1.974s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.974s] compilation terminated.
+[1.982s] gmake[2]: *** [CMakeFiles/odom_bridge_node.dir/build.make:76: CMakeFiles/odom_bridge_node.dir/src/odom_bridge_node.cpp.o] Error 1
+[1.982s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/odom_bridge_node.dir/all] Error 2
+[1.983s] gmake: *** [Makefile:146: all] Error 2
+[1.985s] Invoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge -- -j12 -l12

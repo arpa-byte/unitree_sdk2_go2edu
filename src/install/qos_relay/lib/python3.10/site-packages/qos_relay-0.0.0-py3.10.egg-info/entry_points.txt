@@ -1,0 +1,3 @@
+[console_scripts]
+scan_relay_node = qos_relay.scan_relay_node:main
+

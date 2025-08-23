@@ -1,18 +1,21 @@
 slam_toolbox:
   ros__parameters:
+    use_sim_time: false
+
     odom_frame: "odom"
-    map_frame: "map"
+    map_frame:  "map"
     base_frame: "base_link"
-    scan_topic: "/scan_reliable" # Make sure this is using the reliable topic
-    
-    # --- THIS IS THE CRITICAL FIX ---
-    # Tells SLAM to keep 20 seconds of transform history.
-    # This creates a large window to find a match for incoming sensor data.
-    tf-buffer-duration: 30.0
-        
+    scan_topic: "/scan_reliable"
+
+    # Keep a generous TF history window (seconds)
+    tf_buffer_duration: 30.0
+    transform_timeout: 1.0
+
+    # LiDAR specifics
+    min_laser_range: 0.2
+    max_laser_range: 10.0
+
     mode: "mapping"
     map_update_interval: 1.0
     resolution: 0.05
-    max_laser_range: 10.0
-    use_scan_matching: true
-    minimum_travel_distance: 0.05 # Keep this sensitive value
+    minimum_travel_distance: 0.05
