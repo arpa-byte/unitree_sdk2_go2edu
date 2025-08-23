@@ -1,3 +1,6 @@
+source;share/odom_bridge/hook/cmake_prefix_path.ps1
+source;share/odom_bridge/hook/cmake_prefix_path.dsv
+source;share/odom_bridge/hook/cmake_prefix_path.sh
 source;share/odom_bridge/local_setup.bash
 source;share/odom_bridge/local_setup.dsv
 source;share/odom_bridge/local_setup.ps1

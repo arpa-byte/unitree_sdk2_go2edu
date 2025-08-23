@@ -99,11 +99,12 @@ odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspect
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
 odom_bridge_node: /opt/ros/humble/lib/libstatic_transform_broadcaster_node.so
-odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../lib/x86_64/libunitree_sdk2.a
+odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
+odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/thirdparty/lib/x86_64/libddscxx.so
+odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/thirdparty/lib/x86_64/libddsc.so
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_c.so
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_c.so
 odom_bridge_node: /opt/ros/humble/lib/libtf2_ros.so
-odom_bridge_node: /opt/ros/humble/lib/libtf2.so
 odom_bridge_node: /opt/ros/humble/lib/libmessage_filters.so
 odom_bridge_node: /opt/ros/humble/lib/librclcpp_action.so
 odom_bridge_node: /opt/ros/humble/lib/librclcpp.so
@@ -141,6 +142,7 @@ odom_bridge_node: /opt/ros/humble/lib/librmw_implementation.so
 odom_bridge_node: /opt/ros/humble/lib/libament_index_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/librcl_logging_spdlog.so
 odom_bridge_node: /opt/ros/humble/lib/librcl_logging_interface.so
+odom_bridge_node: /opt/ros/humble/lib/libtf2.so
 odom_bridge_node: /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_fastrtps_c.so
 odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so
 odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so

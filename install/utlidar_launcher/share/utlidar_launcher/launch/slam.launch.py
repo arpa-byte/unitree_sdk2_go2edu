@@ -28,7 +28,17 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    # Static transforms
+    # --- THIS IS NEW ---
+    odom_bridge_node = Node(
+        package='odom_bridge',
+        executable='odom_bridge_node',
+        name='odom_bridge_node',
+        output='screen',
+        arguments=[LaunchConfiguration('network_interface')],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    #Static transforms
     #odom_to_base_tf_node = Node(
     #    package='tf2_ros',
     #    executable='static_transform_publisher',
@@ -57,13 +67,6 @@ def generate_launch_description():
         package='qos_relay',
         executable='scan_relay_node',
         name='scan_qos_relay',
-        parameters=[{'use_sim_time': use_sim_time}]
-    )
-
-    odom_bridge_node = Node(
-        package='odom_bridge',
-        executable='odom_bridge_node',
-        name='odom_bridge_node',
         parameters=[{'use_sim_time': use_sim_time}]
     )
 

@@ -28,14 +28,24 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    #Static transforms
-    odom_to_base_tf_node = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='odom_to_base_tf',
-        arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link'],
+    # --- THIS IS NEW ---
+    odom_bridge_node = Node(
+        package='odom_bridge',
+        executable='odom_bridge_node',
+        name='odom_bridge_node',
+        output='screen',
+        arguments=[LaunchConfiguration('network_interface')],
         parameters=[{'use_sim_time': use_sim_time}]
     )
+
+    #Static transforms
+    #odom_to_base_tf_node = Node(
+    #    package='tf2_ros',
+    #    executable='static_transform_publisher',
+    #    name='odom_to_base_tf',
+    #    arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link'],
+    #    parameters=[{'use_sim_time': use_sim_time}]
+    #)
 
     base_to_lidar_tf_node = Node(
         package='tf2_ros',
@@ -78,7 +88,8 @@ def generate_launch_description():
     return LaunchDescription([
         network_interface_arg,
         lidar_bridge_node,
-        odom_to_base_tf_node,
+        #odom_to_base_tf_node,
+        odom_bridge_node,
         base_to_lidar_tf_node,
         pointcloud_to_laserscan_node,
         qos_relay_node,

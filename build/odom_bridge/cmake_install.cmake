@@ -54,7 +54,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/odom_bridge/odom_bridge_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/odom_bridge/odom_bridge_node"
-         OLD_RPATH "/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge/../../../lib/x86_64:/opt/rti/rti_connext_dds-6.1.2/lib/x64Linux4gcc7.3.0:/opt/ros/humble/lib:"
+         OLD_RPATH "/opt/ros/humble/lib:/home/arpan/unitree2/unitree_sdk2/thirdparty/lib/x86_64:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/odom_bridge/odom_bridge_node")
