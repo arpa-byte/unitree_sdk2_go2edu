@@ -23,7 +23,6 @@ function _colcon_prefix_chain_powershell_source_script {
 
 # source chained prefixes
 _colcon_prefix_chain_powershell_source_script "/opt/ros/humble\local_setup.ps1"
-_colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/ws_livox/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/arpan/turtlebot3_ws/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/fast-lio-ws/install\local_setup.ps1"
