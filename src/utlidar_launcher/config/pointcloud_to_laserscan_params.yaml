@@ -4,9 +4,19 @@ pointcloud_to_laserscan_node:
     target_frame: "utlidar_lidar"
     transform_tolerance: 1.0
     min_height: -0.1
-    max_height: 0.1
-    angle_min: -3.1415
-    angle_max:  3.1415
+    max_height: 0.2
+    angle_min: -1.5708 #180 degrees
+    angle_max:  1.5708
     range_min: 0.2
     range_max: 10.0
     tf_buffer_duration: 30.0 
+
+#angle min and max are in radians: -3.1415 to 3.1415 is -180 to 180 degrees, i.e., full 360 degree scan
+#original min max height: -0.1 to 0.1
+#original angle min max: -3.1415 to 3.1415
+
+   # --- THIS IS THE CRITICAL FIX ---
+    # This tells the node to treat points at range_max as "infinity"
+    # instead of as obstacles, which will remove the phantom wall.
+    use_inf: true
+    inf_epsilon: 1.0

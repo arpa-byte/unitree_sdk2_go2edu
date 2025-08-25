@@ -19,5 +19,18 @@ slam_toolbox:
     mode: "localization"
     map_file_name: ""
     map_update_interval: 1.0
-    resolution: 0.05
+    resolution: 0.03  #meters per cell
     minimum_travel_distance: 0.05
+
+
+# --- NEW PARAMETERS TO PREVENT JUMPING ---
+    # These settings make the SLAM more stable by trusting the odometry more
+    # and limiting how far it searches for a match.
+    #transform_publish_period: 0.02 
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_scan_barycenter_change: 0.02
+    loop_match_minimum_response_fine: 0.6
+    loop_search_maximum_distance: 3.0
+    # This is the most important one for reducing jumps
+    solver_search_radius: 0.5
