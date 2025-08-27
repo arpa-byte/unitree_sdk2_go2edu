@@ -3,13 +3,17 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
-#include <tf2/LinearMath/Transform.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <iostream>
+#include <Eigen/Dense> // For matrix math
 
+// Unitree SDK Includes
 #include "unitree/robot/channel/channel_subscriber.hpp"
 #include "unitree/robot/channel/channel_factory.hpp"
 #include "unitree/idl/go2/SportModeState_.hpp"
+
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
 
 class OdomBridgeNode : public rclcpp::Node
 {
@@ -20,14 +24,27 @@ public:
     odom_publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("/odom", 50);
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
-    RCLCPP_INFO(this->get_logger(), "Odometry bridge node started with AGGRESSIVE filtering.");
+    RCLCPP_INFO(this->get_logger(), "Odometry bridge node with EKF filter started.");
 
-    // Initialize state variables
-    position_.setValue(0.0, 0.0, 0.0);
-    orientation_.setRPY(0, 0, 0);
-    filtered_linear_velocity_.setValue(0.0, 0.0, 0.0);
-    filtered_angular_velocity_.setValue(0.0, 0.0, 0.0);
-    initialized_ = false;
+    // Initialize EKF state and covariance
+    // State: [x, y, yaw]
+    ekf_x_ = VectorXd(3);
+    ekf_x_.setZero();
+    ekf_P_ = MatrixXd::Identity(3, 3) * 1e-3;
+
+    // Process Noise Covariance (Q): Trust prediction almost entirely
+    ekf_Q_ = MatrixXd::Zero(3, 3);
+    ekf_Q_(0, 0) = 1e-8;  // almost no process noise in position
+    ekf_Q_(1, 1) = 1e-8;
+    ekf_Q_(2, 2) = 1e-6;  // very low process noise in yaw
+
+    // Measurement Noise Covariance (R): Ignore jumpy measurements almost completely
+    ekf_R_ = MatrixXd::Zero(3, 3);
+    ekf_R_(0, 0) = 1e3;   // very high measurement noise for x
+    ekf_R_(1, 1) = 1e3;   // very high measurement noise for y
+    ekf_R_(2, 2) = 100.0; // very high measurement noise for yaw
+
+    last_time_ = this->get_clock()->now();
 
     unitree::robot::ChannelFactory::Instance()->Init(0, interface_name);
 
@@ -41,85 +58,95 @@ public:
 private:
   void StateCallback(const void * message)
   {
-    auto now = this->get_clock()->now();
     const auto * dds_msg = static_cast<const unitree_go::msg::dds_::SportModeState_ *>(message);
-
-    if (!initialized_) {
-      last_update_time_ = now;
-      initialized_ = true;
-      const auto& initial_quat = dds_msg->imu_state().quaternion();
-      orientation_.setValue(initial_quat[1], initial_quat[2], initial_quat[3], initial_quat[0]);
-      return;
-    }
-
-    double dt = (now - last_update_time_).seconds();
+    auto now = this->get_clock()->now();
+    double dt = (now - last_time_).seconds();
     if (dt <= 0.0) return;
-    last_update_time_ = now;
 
-    // --- NEW: Low-pass filter for velocities ---
-    // This is the "aggressive filtering" step.
-    // A smaller alpha means more smoothing (more aggressive filtering).
-    const double alpha = 0.1; 
+    // --- EKF PREDICTION STEP ---
+    double yaw = ekf_x_(2);
+    double vx = dds_msg->velocity()[0];
+    double vy = dds_msg->velocity()[1];
+    double yaw_rate = dds_msg->yaw_speed();
+
+    // Predict state using velocity (control input)
+    ekf_x_(0) += (vx * cos(yaw) - vy * sin(yaw)) * dt;
+    ekf_x_(1) += (vx * sin(yaw) + vy * cos(yaw)) * dt;
+    ekf_x_(2) += yaw_rate * dt;
+
+    // Predict covariance
+    MatrixXd F = MatrixXd::Identity(3,3);
+    ekf_P_ = F * ekf_P_ * F.transpose() + ekf_Q_;
+
+    // --- EKF CORRECTION STEP ---
+    // Measurement vector: [x_raw, y_raw, yaw_raw]
+    VectorXd z(3);
+    z(0) = dds_msg->position()[0];
+    z(1) = dds_msg->position()[1];
     
-    // Get raw velocities
-    tf2::Vector3 raw_linear_velocity(dds_msg->velocity()[0], dds_msg->velocity()[1], 0.0);
-    tf2::Vector3 raw_angular_velocity(0.0, 0.0, dds_msg->yaw_speed());
+    auto q = dds_msg->imu_state().quaternion();
+    z(2) = atan2(2.0*(q[0]*q[3] + q[1]*q[2]), 1.0 - 2.0*(q[2]*q[2] + q[3]*q[3]));
+    
+    VectorXd z_pred = ekf_x_; // Measurement model is direct identity
+    VectorXd y = z - z_pred; // Innovation (error)
 
-    // Apply the exponential moving average filter
-    filtered_linear_velocity_ = alpha * raw_linear_velocity + (1.0 - alpha) * filtered_linear_velocity_;
-    filtered_angular_velocity_ = alpha * raw_angular_velocity + (1.0 - alpha) * filtered_angular_velocity_;
+    // Normalize yaw error
+    while (y(2) > M_PI) y(2) -= 2*M_PI;
+    while (y(2) < -M_PI) y(2) += 2*M_PI;
 
-    // --- VELOCITY INTEGRATION (using FILTERED velocities) ---
-    tf2::Vector3 linear_velocity_world = tf2::quatRotate(orientation_, filtered_linear_velocity_);
-    position_ += linear_velocity_world * dt;
+    MatrixXd H = MatrixXd::Identity(3,3);
+    MatrixXd S = H * ekf_P_ * H.transpose() + ekf_R_;
+    MatrixXd K = ekf_P_ * H.transpose() * S.inverse();
 
-    tf2::Quaternion delta_rotation;
-    delta_rotation.setRPY(0, 0, filtered_angular_velocity_.z() * dt);
-    orientation_ = orientation_ * delta_rotation;
-    orientation_.normalize();
+    // Update state and covariance with the correction
+    ekf_x_ = ekf_x_ + K * y;
+    ekf_P_ = (MatrixXd::Identity(3,3) - K * H) * ekf_P_;
 
-    // --- PUBLISH THE SMOOTH, INTEGRATED ODOMETRY ---
+    // Normalize final yaw
+    while (ekf_x_(2) > M_PI) ekf_x_(2) -= 2*M_PI;
+    while (ekf_x_(2) < -M_PI) ekf_x_(2) += 2*M_PI;
+
+    // --- PUBLISH FILTERED ODOMETRY ---
     auto odom_msg = std::make_unique<nav_msgs::msg::Odometry>();
     odom_msg->header.stamp = now;
     odom_msg->header.frame_id = "odom";
     odom_msg->child_frame_id = "base_link";
 
-    odom_msg->pose.pose.position.x = position_.x();
-    odom_msg->pose.pose.position.y = position_.y();
-    odom_msg->pose.pose.position.z = position_.z();
-    odom_msg->pose.pose.orientation = tf2::toMsg(orientation_);
+    odom_msg->pose.pose.position.x = ekf_x_(0);
+    odom_msg->pose.pose.position.y = ekf_x_(1);
     
-    // Publish the FILTERED velocities in the twist message
-    odom_msg->twist.twist.linear.x = filtered_linear_velocity_.x();
-    odom_msg->twist.twist.linear.y = filtered_linear_velocity_.y();
-    odom_msg->twist.twist.angular.z = filtered_angular_velocity_.z();
-    
+    tf2::Quaternion q_corrected;
+    q_corrected.setRPY(0, 0, ekf_x_(2));
+    odom_msg->pose.pose.orientation = tf2::toMsg(q_corrected);
+
+    odom_msg->twist.twist.linear.x = vx;
+    odom_msg->twist.twist.linear.y = vy;
+    odom_msg->twist.twist.angular.z = yaw_rate;
     odom_publisher_->publish(std::move(odom_msg));
 
-    // Broadcast the TF transform using our integrated state
+    // Broadcast filtered TF transform
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = now;
     t.header.frame_id = "odom";
     t.child_frame_id = "base_link";
-    t.transform.translation.x = position_.x();
-    t.transform.translation.y = position_.y();
-    t.transform.translation.z = position_.z();
-    t.transform.rotation = tf2::toMsg(orientation_);
-    
+    t.transform.translation.x = ekf_x_(0);
+    t.transform.translation.y = ekf_x_(1);
+    t.transform.rotation = tf2::toMsg(q_corrected);
     tf_broadcaster_->sendTransform(t);
+
+    last_time_ = now;
   }
 
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher_;
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
   std::shared_ptr<unitree::robot::ChannelSubscriber<unitree_go::msg::dds_::SportModeState_>> state_subscriber_;
 
-  // State variables
-  bool initialized_;
-  rclcpp::Time last_update_time_;
-  tf2::Vector3 position_;
-  tf2::Quaternion orientation_;
-  tf2::Vector3 filtered_linear_velocity_;
-  tf2::Vector3 filtered_angular_velocity_;
+  // EKF variables
+  VectorXd ekf_x_;
+  MatrixXd ekf_P_;
+  MatrixXd ekf_Q_;
+  MatrixXd ekf_R_;
+  rclcpp::Time last_time_;
 };
 
 int main(int argc, char ** argv)

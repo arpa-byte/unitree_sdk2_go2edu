@@ -7,6 +7,7 @@ find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 
 add_executable(odom_bridge_node src/odom_bridge_node.cpp)
@@ -26,6 +27,7 @@ target_include_directories(odom_bridge_node PUBLIC
   "/home/arpan/unitree2/unitree_sdk2/include"
   "/home/arpan/unitree2/unitree_sdk2/thirdparty/include/ddscxx"
   "/home/arpan/unitree2/unitree_sdk2/thirdparty/include"
+  ${EIGEN3_INCLUDE_DIRS}
 )
 
 # The link libraries section is correct.
