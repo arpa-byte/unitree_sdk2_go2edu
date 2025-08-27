@@ -5,12 +5,25 @@
 #include "unitree/robot/channel/channel_factory.hpp"
 #include "unitree/idl/ros2/PointCloud2_.hpp"
 
+#include <cmath>  // Added for std::sqrt and std::isfinite
+
 class LidarToROS2Node : public rclcpp::Node
 {
 public:
   explicit LidarToROS2Node(const std::string & interface_name)
   : rclcpp::Node("lidar_bridge_node")
   {
+    // Declare filtering parameters
+    this->declare_parameter("enable_filtering", true);
+    this->declare_parameter("min_radius", 0.3);
+    this->declare_parameter("min_height", -10.0);
+    this->declare_parameter("max_height", 10.0);
+
+    enable_filtering_ = this->get_parameter("enable_filtering").as_bool();
+    min_radius_ = this->get_parameter("min_radius").as_double();
+    min_height_ = this->get_parameter("min_height").as_double();
+    max_height_ = this->get_parameter("max_height").as_double();
+
     // Publish on /lidar/point_cloud with reasonable depth
     rclcpp::QoS qos(rclcpp::KeepLast(10));
     publisher_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/lidar/point_cloud", qos);
@@ -55,12 +68,68 @@ private:
     ros2_msg->data = dds_msg->data();
     ros2_msg->is_dense = dds_msg->is_dense();
 
+    // Apply filtering if enabled
+    if (enable_filtering_) {
+      // Find offsets for x, y, z fields dynamically
+      size_t offset_x = SIZE_MAX;
+      size_t offset_y = SIZE_MAX;
+      size_t offset_z = SIZE_MAX;
+      for (const auto& field : ros2_msg->fields) {
+        if (field.name == "x") offset_x = field.offset;
+        else if (field.name == "y") offset_y = field.offset;
+        else if (field.name == "z") offset_z = field.offset;
+      }
+
+      if (offset_x == SIZE_MAX || offset_y == SIZE_MAX || offset_z == SIZE_MAX) {
+        RCLCPP_WARN(this->get_logger(), "Point cloud missing x, y, or z fields; publishing unfiltered.");
+      } else {
+        // Filter: remove NaN/invalid, near-origin, and vertical extremes
+        std::vector<uint8_t> filtered_data;
+        filtered_data.reserve(ros2_msg->data.size());
+
+        const uint8_t* data_ptr = ros2_msg->data.data();
+        size_t num_points = ros2_msg->width * ros2_msg->height;
+
+        for (size_t i = 0; i < num_points; ++i) {
+          size_t byte_idx = i * ros2_msg->point_step;
+
+          const float x = *reinterpret_cast<const float*>(data_ptr + byte_idx + offset_x);
+          const float y = *reinterpret_cast<const float*>(data_ptr + byte_idx + offset_y);
+          const float z = *reinterpret_cast<const float*>(data_ptr + byte_idx + offset_z);
+
+          if (std::isfinite(x) && std::isfinite(y) && std::isfinite(z)) {
+            float range = std::sqrt(x * x + y * y + z * z);
+            if (range >= min_radius_ && z >= min_height_ && z <= max_height_) {
+              filtered_data.insert(filtered_data.end(), data_ptr + byte_idx, data_ptr + byte_idx + ros2_msg->point_step);
+            }
+          }
+        }
+
+        // Update message with filtered data
+        if (!filtered_data.empty()) {
+          ros2_msg->data = std::move(filtered_data);
+          ros2_msg->width = ros2_msg->data.size() / ros2_msg->point_step;
+          ros2_msg->row_step = ros2_msg->width * ros2_msg->point_step;
+          ros2_msg->height = 1;  // Flatten to unorganized if necessary
+          ros2_msg->is_dense = true;
+        } else {
+          RCLCPP_WARN(this->get_logger(), "All points filtered out; publishing empty cloud.");
+        }
+      }
+    }
+
     publisher_->publish(std::move(ros2_msg));
   }
 
   rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr publisher_;
   std::shared_ptr<unitree::robot::ChannelSubscriber<sensor_msgs::msg::dds_::PointCloud2_>>
     lidar_subscriber_;
+
+  // Filtering parameters
+  bool enable_filtering_;
+  double min_radius_;
+  double min_height_;
+  double max_height_;
 };
 
 int main(int argc, char ** argv)

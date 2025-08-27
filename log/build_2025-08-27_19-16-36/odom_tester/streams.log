@@ -1,0 +1,61 @@
+[0.026s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_tester -DCMAKE_INSTALL_PREFIX=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester
+[0.344s] -- The C compiler identification is GNU 11.4.0
+[0.344s] -- The CXX compiler identification is GNU 11.4.0
+[0.345s] -- Detecting C compiler ABI info
+[0.345s] -- Detecting C compiler ABI info - done
+[0.345s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.345s] -- Detecting C compile features
+[0.345s] -- Detecting C compile features - done
+[0.345s] -- Detecting CXX compiler ABI info
+[0.345s] -- Detecting CXX compiler ABI info - done
+[0.345s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.345s] -- Detecting CXX compile features
+[0.345s] -- Detecting CXX compile features - done
+[0.349s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.508s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.665s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.766s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.781s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.800s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.832s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.871s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.951s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.956s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.074s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.108s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.165s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.181s] -- Looking for pthread.h
+[1.257s] -- Looking for pthread.h - found
+[1.257s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.330s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.331s] -- Found Threads: TRUE  
+[1.392s] -- Found nav_msgs: 4.8.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.500s] -- Configuring done
+[1.513s] -- Generating done
+[1.518s] -- Build files have been written to: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester
+[1.528s] Invoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake /home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_tester -DCMAKE_INSTALL_PREFIX=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester
+[1.529s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester -- -j12 -l12
+[1.581s] [ 50%] [32mBuilding CXX object CMakeFiles/odom_tester_node.dir/src/odom_tester_node.cpp.o[0m
+[6.179s] [100%] [32m[1mLinking CXX executable odom_tester_node[0m
+[6.724s] [100%] Built target odom_tester_node
+[6.737s] Invoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester -- -j12 -l12
+[6.739s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester
+[6.748s] -- Install configuration: ""
+[6.748s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/odom_tester/odom_tester_node
+[6.752s] -- Set runtime path of "/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/odom_tester/odom_tester_node" to ""
+[6.752s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/package_run_dependencies/odom_tester
+[6.752s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/parent_prefix_path/odom_tester
+[6.752s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/ament_prefix_path.sh
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/ament_prefix_path.dsv
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/path.sh
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/path.dsv
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.bash
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.sh
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.zsh
+[6.753s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.dsv
+[6.754s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.dsv
+[6.754s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/packages/odom_tester
+[6.754s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/cmake/odom_testerConfig.cmake
+[6.754s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/cmake/odom_testerConfig-version.cmake
+[6.754s] -- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.xml
+[6.757s] Invoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester
