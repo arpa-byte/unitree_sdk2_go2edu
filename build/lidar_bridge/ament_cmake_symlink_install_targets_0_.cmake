@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge/lidar_bridge_node" "TARGETS" "lidar_bridge_node" "DESTINATION" "lib/lidar_bridge")

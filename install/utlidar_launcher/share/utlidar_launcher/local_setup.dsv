@@ -1,2 +1,1 @@
-source;share/utlidar_launcher/environment/ament_prefix_path.sh
-source;share/utlidar_launcher/environment/path.sh
+/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher/ament_cmake_environment_hooks/local_setup.dsv

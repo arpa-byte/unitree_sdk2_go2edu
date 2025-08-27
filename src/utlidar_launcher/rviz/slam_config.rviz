@@ -24,4 +24,4 @@ Visualization Manager:
         Value: /scan_reliable
       Size (Pixels): 2
       Style: Points
-      Decay Time: 3000
+      Decay Time: 0

@@ -1,1 +1,1 @@
-rclcpp;nav_msgs;tf2_ros;unitree_go_msgs;ament_lint_auto;ament_lint_common
+rclcpp;nav_msgs;tf2_ros;unitree_go_msgs;tf2_geometry_msgs;ament_lint_auto;ament_lint_common

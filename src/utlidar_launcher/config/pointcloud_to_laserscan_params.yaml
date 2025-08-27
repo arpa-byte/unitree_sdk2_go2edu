@@ -5,8 +5,8 @@ pointcloud_to_laserscan_node:
     transform_tolerance: 1.0
     min_height: -0.1
     max_height: 0.2
-    angle_min: -1.5708 #180 degrees
-    angle_max:  1.5708
+    angle_min: -2.34 #180 degrees
+    angle_max:  2.34
     range_min: 0.2
     range_max: 10.0
     tf_buffer_duration: 30.0 

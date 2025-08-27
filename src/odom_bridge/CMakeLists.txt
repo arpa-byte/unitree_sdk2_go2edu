@@ -5,6 +5,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+
 
 add_executable(odom_bridge_node src/odom_bridge_node.cpp)
 
@@ -12,6 +14,8 @@ ament_target_dependencies(odom_bridge_node
   "rclcpp"
   "nav_msgs"
   "tf2_ros"
+  "tf2_geometry_msgs"
+
 )
 
 # --- THE CRITICAL FIX IS HERE ---

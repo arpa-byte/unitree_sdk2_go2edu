@@ -1,2 +1,1 @@
-source;share/odom_bridge/environment/ament_prefix_path.sh
-source;share/odom_bridge/environment/path.sh
+/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge/ament_cmake_environment_hooks/local_setup.dsv
