@@ -8,6 +8,13 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(kdl_parser REQUIRED)
+find_package(orocos_kdl REQUIRED)
+find_package(urdf REQUIRED)
+
+
 
 
 add_executable(odom_bridge_node src/odom_bridge_node.cpp)
@@ -18,6 +25,11 @@ ament_target_dependencies(odom_bridge_node
   "tf2_ros"
   "tf2_geometry_msgs"
   "tf2"
+  "sensor_msgs"          # <--- add
+  "geometry_msgs"        # <--- add
+  "kdl_parser"           # <--- add
+  "orocos_kdl" 
+  "urdf"
 )
 
 # --- THE CRITICAL FIX IS HERE ---

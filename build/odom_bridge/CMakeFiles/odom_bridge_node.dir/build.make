@@ -99,6 +99,14 @@ odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_introspect
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/libnav_msgs__rosidl_generator_py.so
 odom_bridge_node: /opt/ros/humble/lib/libstatic_transform_broadcaster_node.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
+odom_bridge_node: /opt/ros/humble/lib/libkdl_parser.so
+odom_bridge_node: /opt/ros/humble/lib/liburdf.so
+odom_bridge_node: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/lib/x86_64/libunitree_sdk2.a
 odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/thirdparty/lib/x86_64/libddscxx.so
 odom_bridge_node: /home/arpan/unitree2/unitree_sdk2/thirdparty/lib/x86_64/libddsc.so
@@ -139,7 +147,6 @@ odom_bridge_node: /opt/ros/humble/lib/librcl_yaml_param_parser.so
 odom_bridge_node: /opt/ros/humble/lib/libyaml.so
 odom_bridge_node: /opt/ros/humble/lib/libtracetools.so
 odom_bridge_node: /opt/ros/humble/lib/librmw_implementation.so
-odom_bridge_node: /opt/ros/humble/lib/libament_index_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/librcl_logging_spdlog.so
 odom_bridge_node: /opt/ros/humble/lib/librcl_logging_interface.so
 odom_bridge_node: /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_fastrtps_c.so
@@ -185,10 +192,8 @@ odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspect
 odom_bridge_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_introspection_cpp.so
 odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_introspection_c.so
-odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
-odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
-odom_bridge_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
-odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
 odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_py.so
 odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so
 odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
@@ -198,12 +203,25 @@ odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
 odom_bridge_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 odom_bridge_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
-odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_c.so
-odom_bridge_node: /opt/ros/humble/lib/librcpputils.so
-odom_bridge_node: /opt/ros/humble/lib/librosidl_runtime_c.so
-odom_bridge_node: /opt/ros/humble/lib/librcutils.so
 odom_bridge_node: /usr/lib/x86_64-linux-gnu/libpython3.10.so
-odom_bridge_node: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
+odom_bridge_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/librosidl_typesupport_c.so
+odom_bridge_node: /opt/ros/humble/lib/librosidl_runtime_c.so
+odom_bridge_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_sensor.so.3.0
+odom_bridge_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_model_state.so.3.0
+odom_bridge_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_model.so.3.0
+odom_bridge_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_world.so.3.0
+odom_bridge_node: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+odom_bridge_node: /opt/ros/humble/lib/libament_index_cpp.so
+odom_bridge_node: /opt/ros/humble/lib/libclass_loader.so
+odom_bridge_node: /opt/ros/humble/lib/librcpputils.so
+odom_bridge_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
+odom_bridge_node: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+odom_bridge_node: /opt/ros/humble/lib/librcutils.so
 odom_bridge_node: CMakeFiles/odom_bridge_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable odom_bridge_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/odom_bridge_node.dir/link.txt --verbose=$(VERBOSE)

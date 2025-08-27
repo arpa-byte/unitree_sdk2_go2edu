@@ -640,6 +640,12 @@ CMakeFiles/odom_bridge_node.dir/src/odom_bridge_node.cpp.o: \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
  /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp \
  /opt/ros/humble/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joint_state.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
@@ -747,7 +753,13 @@ CMakeFiles/odom_bridge_node.dir/src/odom_bridge_node.cpp.o: \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.hpp \
  /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.hpp \
  /opt/ros/humble/include/tf2_ros/tf2_ros/buffer_interface.h \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
+ /usr/include/kdl/tree.hpp /usr/include/kdl/config.h \
+ /usr/include/kdl/segment.hpp /usr/include/kdl/frames.hpp \
+ /usr/include/kdl/rigidbodyinertia.hpp \
+ /usr/include/kdl/rotationalinertia.hpp /usr/include/kdl/joint.hpp \
+ /usr/include/kdl/chain.hpp /usr/include/kdl/chain.hpp \
+ /usr/include/kdl/chainjnttojacsolver.hpp /usr/include/kdl/solveri.hpp \
+ /usr/include/kdl/jacobian.hpp /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
  /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
@@ -889,6 +901,30 @@ CMakeFiles/odom_bridge_node.dir/src/odom_bridge_node.cpp.o: \
  /usr/include/eigen3/Eigen/src/Core/StlIterators.h \
  /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+ /usr/include/kdl/jntarray.hpp \
+ /usr/include/kdl/chainfksolverpos_recursive.hpp \
+ /usr/include/kdl/chainfksolver.hpp /usr/include/kdl/framevel.hpp \
+ /usr/include/kdl/utilities/rall1d.h /usr/include/kdl/utilities/utility.h \
+ /usr/include/kdl/utilities/traits.h /usr/include/kdl/framevel.inl \
+ /usr/include/kdl/frameacc.hpp /usr/include/kdl/utilities/rall2d.h \
+ /usr/include/kdl/frameacc.inl /usr/include/kdl/jntarrayvel.hpp \
+ /usr/include/kdl/jntarrayacc.hpp \
+ /opt/ros/humble/include/kdl_parser/kdl_parser/kdl_parser.hpp \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/model.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/link.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/joint.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/pose.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_exception/exception.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/utils.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/types.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/color.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_model/types.h \
+ /opt/ros/humble/include/kdl_parser/kdl_parser/visibility_control.hpp \
+ /opt/ros/humble/include/urdf/urdf/model.h \
+ /opt/ros/humble/include/urdf/urdf/urdfdom_compatibility.h \
+ /opt/ros/humble/include/urdfdom_headers/urdf_world/types.h \
+ /opt/ros/humble/include/urdf/urdf/visibility_control.hpp \
+ /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/LU /usr/include/eigen3/Eigen/src/misc/Kernel.h \
  /usr/include/eigen3/Eigen/src/misc/Image.h \
  /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \

@@ -1,1 +1,1 @@
-rclcpp;nav_msgs;tf2_ros;unitree_go_msgs;tf2_geometry_msgs;tf2;eigen3_cmake_module;ament_lint_auto;ament_lint_common
+rclcpp;nav_msgs;tf2_ros;unitree_go_msgs;tf2_geometry_msgs;tf2;eigen3_cmake_module;sensor_msgs;geometry_msgs;kdl_parser;orocos_kdl;urdf;ament_lint_auto;ament_lint_common

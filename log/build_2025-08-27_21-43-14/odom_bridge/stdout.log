@@ -34,6 +34,9 @@
 -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
 -- Found Eigen3: TRUE (found version "3.4.0") 
 -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found kdl_parser: 2.6.4 (/opt/ros/humble/share/kdl_parser/cmake)
+-- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge
