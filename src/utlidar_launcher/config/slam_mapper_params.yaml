@@ -23,14 +23,17 @@ slam_toolbox:
     minimum_travel_distance: 0.05
 
 
-# --- NEW PARAMETERS TO PREVENT JUMPING ---
-    # These settings make the SLAM more stable by trusting the odometry more
-    # and limiting how far it searches for a match.
-    #transform_publish_period: 0.02 
-    use_scan_matching: true
+    # --- Extremely conservative / aggressive filters (debugging mode) ---
+    use_scan_matching: true               # keep enabled but make it tiny
     use_scan_barycenter: true
-    minimum_scan_barycenter_change: 0.02
-    loop_match_minimum_response_fine: 0.6
-    loop_search_maximum_distance: 3.0
-    # This is the most important one for reducing jumps
-    solver_search_radius: 0.5
+    minimum_scan_barycenter_change: 10.0  # require huge barycenter change before accepting scans
+    loop_match_minimum_response_fine: 0.999   # almost impossible to accept loop matches
+    loop_search_maximum_distance: 0.05    # extremely small search radius for loop detection
+    solver_search_radius: 0.01           # extremely tight solver radius
+    transform_publish_period: 0.2       # publish transforms much less often (if you prefer)
+    
+    # reduce optimizer aggressiveness
+    optimize_every_n_nodes: 0            # disable periodic optimization (avoid large jumps)
+    max_history_seconds: 1.0             # very small history kept
+    # (optional) disable loop closures entirely (comment out if you want loop closures)
+    enable_loop_closure: false
