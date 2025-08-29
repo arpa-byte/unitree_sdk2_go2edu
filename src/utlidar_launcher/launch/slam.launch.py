@@ -36,7 +36,12 @@ def generate_launch_description():
     base_to_lidar_tf_node = Node(
         package='tf2_ros', executable='static_transform_publisher',
         name='base_to_lidar_tf',
-        arguments=['0.15', '0.0', '0.1', '0.0', '0.0', '0.0', 'base_link', 'utlidar_lidar']
+        
+        #Original arguments:
+        arguments=['0.15', '0.0', '0.1', '0.0', '0.0', '0.0', 'base_link', 'utlidar_lidar']     
+        
+        #Quick fix done here to flip the lidar by 180 degrees. the fourth value was 0.0 yaw in radians originally, which is changed to 3.14159.
+        #arguments=['0.15', '0.0', '0.1', '3.14159', '0.0', '0.0', 'base_link', 'utlidar_lidar']     
     )
 
     pointcloud_to_laserscan_node = Node(

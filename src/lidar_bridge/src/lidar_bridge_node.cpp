@@ -5,7 +5,7 @@
 #include "unitree/robot/channel/channel_factory.hpp"
 #include "unitree/idl/ros2/PointCloud2_.hpp"
 
-#include <cmath>  // Added for std::sqrt and std::isfinite
+#include <cmath>
 
 class LidarToROS2Node : public rclcpp::Node
 {
@@ -44,13 +44,9 @@ private:
     const auto * dds_msg = static_cast<const sensor_msgs::msg::dds_::PointCloud2_ *>(message);
     auto ros2_msg = std::make_unique<sensor_msgs::msg::PointCloud2>();
 
-    // --- CRITICAL: stamp with current ROS time (system time on Humble) ---
     ros2_msg->header.stamp = this->get_clock()->now();
-
-    // Use a consistent frame name that matches your static TF
     ros2_msg->header.frame_id = "utlidar_lidar";
 
-    // Copy fields
     ros2_msg->height = dds_msg->height();
     ros2_msg->width = dds_msg->width();
 
@@ -68,9 +64,38 @@ private:
     ros2_msg->data = dds_msg->data();
     ros2_msg->is_dense = dds_msg->is_dense();
 
+    // --- START MODIFICATION: 180-DEGREE Y-AXIS ROTATION ---
+    // This block will iterate through every point in the cloud and apply the
+    // transformation (x, y, z) -> (-x, y, -z) to correct the orientation.
+    size_t offset_x_rot = SIZE_MAX;
+    size_t offset_z_rot = SIZE_MAX;
+    for (const auto& field : ros2_msg->fields) {
+        if (field.name == "x") offset_x_rot = field.offset;
+        else if (field.name == "z") offset_z_rot = field.offset;
+    }
+
+    if (offset_x_rot != SIZE_MAX && offset_z_rot != SIZE_MAX) {
+        uint8_t* data_ptr = ros2_msg->data.data();
+        size_t num_points = ros2_msg->width * ros2_msg->height;
+
+        for (size_t i = 0; i < num_points; ++i) {
+            size_t byte_idx = i * ros2_msg->point_step;
+
+            // Get pointers to the float values for x and z within the byte buffer
+            float* x_ptr = reinterpret_cast<float*>(data_ptr + byte_idx + offset_x_rot);
+            float* z_ptr = reinterpret_cast<float*>(data_ptr + byte_idx + offset_z_rot);
+
+            // Apply the rotation in-place by negating x and z
+            *x_ptr = -(*x_ptr);
+            *z_ptr = -(*z_ptr);
+        }
+    } else {
+        RCLCPP_WARN(this->get_logger(), "Point cloud missing 'x' or 'z' fields; cannot apply 180-degree rotation.");
+    }
+    // --- END MODIFICATION ---
+
     // Apply filtering if enabled
     if (enable_filtering_) {
-      // Find offsets for x, y, z fields dynamically
       size_t offset_x = SIZE_MAX;
       size_t offset_y = SIZE_MAX;
       size_t offset_z = SIZE_MAX;
@@ -83,7 +108,6 @@ private:
       if (offset_x == SIZE_MAX || offset_y == SIZE_MAX || offset_z == SIZE_MAX) {
         RCLCPP_WARN(this->get_logger(), "Point cloud missing x, y, or z fields; publishing unfiltered.");
       } else {
-        // Filter: remove NaN/invalid, near-origin, and vertical extremes
         std::vector<uint8_t> filtered_data;
         filtered_data.reserve(ros2_msg->data.size());
 
@@ -105,12 +129,11 @@ private:
           }
         }
 
-        // Update message with filtered data
         if (!filtered_data.empty()) {
           ros2_msg->data = std::move(filtered_data);
           ros2_msg->width = ros2_msg->data.size() / ros2_msg->point_step;
           ros2_msg->row_step = ros2_msg->width * ros2_msg->point_step;
-          ros2_msg->height = 1;  // Flatten to unorganized if necessary
+          ros2_msg->height = 1;
           ros2_msg->is_dense = true;
         } else {
           RCLCPP_WARN(this->get_logger(), "All points filtered out; publishing empty cloud.");
@@ -125,7 +148,6 @@ private:
   std::shared_ptr<unitree::robot::ChannelSubscriber<sensor_msgs::msg::dds_::PointCloud2_>>
     lidar_subscriber_;
 
-  // Filtering parameters
   bool enable_filtering_;
   double min_radius_;
   double min_height_;

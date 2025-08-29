@@ -3,7 +3,7 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
-#include <tf2/LinearMath/Matrix3x3.h> // Required for getRPY
+#include <tf2/LinearMath/Matrix3x3.h> // For getRPY
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <Eigen/Dense>
 #include <memory>
@@ -17,7 +17,7 @@
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
-// Contact estimation gains (from III-A)
+// Contact estimation gains (III-A)
 static constexpr double L1 = 50.0;
 static constexpr double L2 = 50.0;
 
@@ -28,13 +28,13 @@ public:
     odom_pub_ = create_publisher<nav_msgs::msg::Odometry>("/odom", 50);
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
-    // EKF state: [x, y, yaw]
-    x_    = VectorXd::Zero(3);
-    P_    = MatrixXd::Identity(3,3) * 1e-3;
-    Q_    = MatrixXd::Zero(3,3);
-    Q_(0,0)=1e-4; Q_(1,1)=1e-4; Q_(2,2)=1e-5;
-    R_    = MatrixXd::Zero(3,3);
-    R_(0,0)=0.5;  R_(1,1)=0.5;  R_(2,2)=0.2;
+    // Initialize EKF states for [x, y, yaw]
+    x_ = VectorXd::Zero(3);
+    P_ = MatrixXd::Identity(3, 3) * 1e-3;
+    Q_ = MatrixXd::Zero(3, 3);
+    Q_(0, 0) = 1e-4; Q_(1, 1) = 1e-4; Q_(2, 2) = 1e-5;
+    R_ = MatrixXd::Zero(3, 3);
+    R_(0, 0) = 0.5; R_(1, 1) = 0.5; R_(2, 2) = 0.2;
 
     last_time_ = now();
 
@@ -42,85 +42,88 @@ public:
     subscriber_ = std::make_shared<
       unitree::robot::ChannelSubscriber<unitree_go::msg::dds_::SportModeState_>>(
         "rt/sportmodestate");
-    subscriber_->InitChannel([this](auto msg){ this->stateCallback(msg); });
+    subscriber_->InitChannel([this](auto msg) { this->stateCallback(msg); });
   }
 
 private:
   void stateCallback(const void *m) {
-    const auto *dds = static_cast<const unitree_go::msg::dds_::SportModeState_*>(m);
+    const auto *dds = static_cast<const unitree_go::msg::dds_::SportModeState_ *>(m);
     auto now = get_clock()->now();
     double dt = (now - last_time_).seconds();
     if (dt <= 0) return;
 
-    // --- III-A Contact Estimation ---
+    // --- III-A Contact Estimation (placeholder) ---
     VectorXd p = VectorXd::Zero(12), pdot = VectorXd::Zero(12);
-    double fz_est = L1*(p(2) - pdot(2)) + L2*(p(2) - pdot(2));
+    double fz_est = L1 * (p(2) - pdot(2)) + L2 * (p(2) - pdot(2));
     bool contact = (fz_est > 1.0);
 
     // --- III-B Leg Odometry Twist Estimation ---
-    double raw_vx = dds->velocity()[0];
-    double raw_vy = dds->velocity()[1];
-    double raw_wz = dds->yaw_speed();
-
-    // ********************************************************************
-    // *** BEGIN FIX: Flip coordinate system to match ROS REP-103         ***
-    // *** We negate all body-frame velocities because the robot's native ***
-    // *** coordinate system is flipped 180 degrees.                    ***
-    // ********************************************************************
-    double vx = -raw_vx;
-    double vy = -raw_vy; // Also flip Y to maintain a right-hand coordinate system
-    double wz = -raw_wz;
-    // ********************************************************************
-    // *** END FIX                                                      ***
-    // ********************************************************************
+    // Use raw velocities directly, as determined in the previous step.
+    double vx = dds->velocity()[0];
+    double vy = dds->velocity()[1];
+    double wz = dds->yaw_speed();
 
     if (!contact) { vx = vy = wz = 0.0; }
 
     // --- IV-B / III-E EKF Prediction ---
-    // Use the corrected velocities to predict the next state in the correct frame.
     double yaw = x_(2);
     x_(0) += (vx * cos(yaw) - vy * sin(yaw)) * dt;
     x_(1) += (vx * sin(yaw) + vy * cos(yaw)) * dt;
     x_(2) += wz * dt;
     wrapYaw(x_(2));
 
-    MatrixXd F = MatrixXd::Identity(3,3);
+    MatrixXd F = MatrixXd::Identity(3, 3);
     P_ = F * P_ * F.transpose() + Q_;
 
     // --- EKF Correction using raw pose ---
     VectorXd z(3);
-    z << dds->position()[0], dds->position()[1], 0;
+    z << dds->position()[0], dds->position()[1], 0.0;
 
-    // ********************************************************************
-    // *** BEGIN FIX: Correct the IMU orientation (180-degree yaw rotation) ***
-    // ********************************************************************
-    // --- FIXED: Use IMU quaternion directly, no extra 180° yaw flip ---
+    // Extract IMU quaternion for orientation correction
     tf2::Quaternion imu_quat(
-        dds->imu_state().quaternion()[1], // x
-        dds->imu_state().quaternion()[2], // y
-        dds->imu_state().quaternion()[3], // z
-        dds->imu_state().quaternion()[0]  // w
+      dds->imu_state().quaternion()[1],  // x
+      dds->imu_state().quaternion()[2],  // y
+      dds->imu_state().quaternion()[3],  // z
+      dds->imu_state().quaternion()[0]   // w
     );
+
+    /// ============================= FIX APPLIED HERE (replacement) =============================
+    // The robot's base_link appears flipped 180° about the Y axis (forward/backwards).
+    // To correct that, rotate IMU by 180° around Y and apply the same rotation to velocities.
+
+    tf2::Quaternion rotation_fix;
+    rotation_fix.setRPY(0.0, M_PI, 0.0); // 180 deg about Y (flip forward axis)
+
+    // Apply the correction to the raw IMU quaternion
+    imu_quat = rotation_fix * imu_quat;
     imu_quat.normalize();
 
-    double corrected_roll, corrected_pitch, corrected_yaw;
-    tf2::Matrix3x3(imu_quat).getRPY(corrected_roll, corrected_pitch, corrected_yaw);
-    z(2) = corrected_yaw; // Use the corrected yaw directly                                   
-    // ********************************************************************
-    // *** END FIX                                                      ***
-    // ********************************************************************
+    // IMPORTANT: rotate the body-frame velocity (vx, vy) by the same physical rotation
+    // so the velocity vector and orientation stay consistent.
+    tf2::Matrix3x3 Rfix(rotation_fix);
+    tf2::Vector3 vel_body(vx, vy, 0.0);
+    tf2::Vector3 vel_fixed = Rfix * vel_body;
+    vx = vel_fixed.x();
+    vy = vel_fixed.y();
+    // =======================================================================================
+
+
+    double roll, pitch, imu_yaw;
+    tf2::Matrix3x3(imu_quat).getRPY(roll, pitch, imu_yaw);
+    z(2) = imu_yaw;
 
     VectorXd y = z - x_;
     wrapYaw(y(2));
 
-    MatrixXd H = MatrixXd::Identity(3,3);
-    MatrixXd S = H*P_*H.transpose() + R_;
-    MatrixXd K = P_*H.transpose()*S.inverse();
-    x_ = x_ + K*y;
-    wrapYaw(x_(2));
-    P_ = (MatrixXd::Identity(3,3) - K*H) * P_;
+    MatrixXd H = MatrixXd::Identity(3, 3);
+    MatrixXd S = H * P_ * H.transpose() + R_;
+    MatrixXd K = P_ * H.transpose() * S.inverse();
 
-    // --- PUBLISH filtered odometry ---
+    x_ = x_ + K * y;
+    wrapYaw(x_(2));
+    P_ = (MatrixXd::Identity(3, 3) - K * H) * P_;
+
+    // --- Publish filtered odometry message ---
     auto odom = std::make_unique<nav_msgs::msg::Odometry>();
     odom->header.stamp = now;
     odom->header.frame_id = "odom";
@@ -132,13 +135,12 @@ private:
     q.setRPY(0, 0, x_(2));
     odom->pose.pose.orientation = tf2::toMsg(q);
 
-    // Publish the corrected twist for downstream nodes
     odom->twist.twist.linear.x = vx;
     odom->twist.twist.linear.y = vy;
     odom->twist.twist.angular.z = wz;
-    odom_pub_->publish(*odom);
+    odom_pub_->publish(std::move(odom));
 
-    // --- TF broadcast ---
+    // --- Publish TF transform odom -> base_link ---
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = now;
     t.header.frame_id = "odom";
@@ -152,8 +154,8 @@ private:
   }
 
   void wrapYaw(double &a) {
-    while(a > M_PI)  a -= 2*M_PI;
-    while(a < -M_PI) a += 2*M_PI;
+    while (a > M_PI) a -= 2 * M_PI;
+    while (a < -M_PI) a += 2 * M_PI;
   }
 
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
@@ -166,6 +168,10 @@ private:
 };
 
 int main(int argc, char **argv) {
+  if (argc < 2) {
+    std::cerr << "Usage: " << argv[0] << " <network_interface>\n";
+    return 1;
+  }
   rclcpp::init(argc, argv);
   auto node = std::make_shared<OdomBridgeNode>(argv[1]);
   rclcpp::spin(node);
