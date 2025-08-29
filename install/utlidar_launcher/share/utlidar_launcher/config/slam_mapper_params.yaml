@@ -23,17 +23,47 @@ slam_toolbox:
     minimum_travel_distance: 0.05
 
 
-    # --- Extremely conservative / aggressive filters (debugging mode) ---
-    use_scan_matching: true               # keep enabled but make it tiny
-    use_scan_barycenter: true
-    minimum_scan_barycenter_change: 10.0  # require huge barycenter change before accepting scans
-    loop_match_minimum_response_fine: 0.999   # almost impossible to accept loop matches
-    loop_search_maximum_distance: 0.05    # extremely small search radius for loop detection
-    solver_search_radius: 0.01           # extremely tight solver radius
-    transform_publish_period: 0.2       # publish transforms much less often (if you prefer)
-    
-    # reduce optimizer aggressiveness
-    optimize_every_n_nodes: 0            # disable periodic optimization (avoid large jumps)
-    max_history_seconds: 1.0             # very small history kept
-    # (optional) disable loop closures entirely (comment out if you want loop closures)
-    enable_loop_closure: false
+    # ====================================================================
+    #           PARAMETERS TO INCREASE TRUST IN LIDAR
+    # ====================================================================
+
+    # --- Scan Matching (The "Leash") ---
+    # This is the most important parameter. It defines the search radius for the
+    # scan matcher. A smaller value forces the matcher to work harder and
+    # rely less on the odometry's initial prediction.
+    # We are reducing this from the default (0.4) to a much smaller value.
+    solver_search_radius: 0.15
+
+    # Always use scan matching. This is the core of the algorithm.
+    use_scan_matching: true
+
+    # --- Loop Closure (Making Large Corrections) ---
+    # This was disabled in your config! It's essential for good maps.
+    # This allows the robot to recognize a place it has seen before and
+    # correct all the accumulated odometry drift.
+    enable_loop_closure: true
+
+    # How far to search for a potential loop closure match.
+    # Since our odometry is drifty, we should search in a wider area.
+    loop_search_maximum_distance: 8.0
+
+    # How often to try and find a loop closure. 10 means every 10 nodes
+    # added to the graph. This is a reasonable value.
+    loop_match_minimum_chain_size: 10
+
+    # Minimum score for a scan match to be considered a good loop closure.
+    # Don't make this too high, or it will never find loops.
+    loop_match_minimum_response_fine: 0.7
+
+    # --- Odometry Motion Model (How much to trust odometry between scans) ---
+    # These parameters define the uncertainty of the odometry.
+    # By INCREASING these values, we are telling the system that the odometry
+    # is noisy and unreliable.
+    # Format is [linear_linear, linear_angular, angular_linear, angular_angular]
+    motion_model_noise_linear: [0.20, 0.10]
+    motion_model_noise_angular: [0.10, 0.20]
+
+    # --- Graph Optimizer ---
+    # How often to run the full graph optimization process. 0 disables it,
+    # which is bad. Running it every 3 nodes is a good balance.
+    optimize_every_n_nodes: 3
