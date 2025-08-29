@@ -1,0 +1,17 @@
+Input data: Line: 1.75648e+09, 0.000894202, -0.00237053, 0.00106526
+timestamp seconds
+foward/backward velocity m/s
+rate of rotation (yaw speed) rad/s
+
+
+output data fom odom: 1.75648e+09, 0.00335115, -0.000161125, -2.05269e-05, -0.000610581, -0.0167101, 0.00131695, 0.0127832
+timestamp seconds
+delta time seconds - time that has passed since the previous update cycle
+X-position meters
+Y-position meters
+forward velocity m/s
+sideways velocity m/s
+angular velocity rad/s
+
+
+all the velocities are instantaneous. The position increases and decreases based on the initial reference/origin
