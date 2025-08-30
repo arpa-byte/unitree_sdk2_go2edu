@@ -1,8 +1,33 @@
-# IDE
-.vscode
+# ROS 2 build artifacts
+build/
+install/
+log/
 
-# cpp
-build
+# Python artifacts
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
 
-#cland
-.cache
+# C++ artifacts
+*.o
+*.so
+*.a
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+
+# IDE files
+.vscode/
+.idea/
+
+# Your local log files from the odom_bridge
+odom_inputs.txt
+odom_outputs.txt
