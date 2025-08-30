@@ -1,0 +1,394 @@
+[0.275s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[0.275s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78dec505af20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78dec505bca0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78dec505bca0>>, mixin_verb=('build',))[0m
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.627s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam'
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.628s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.653s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.654s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.655s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) by extension 'ignore'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) ignored
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) by extension 'ignore'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) ignored
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extension 'ignore'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extension 'ignore_ament_install'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extensions ['colcon_pkg']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extension 'colcon_pkg'
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extensions ['colcon_meta']
+[0.656s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extension 'colcon_meta'
+[0.657s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extensions ['ros']
+[0.657s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/lidar_bridge) by extension 'ros'
+[0.661s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/lidar_bridge' with type 'ros.ament_cmake' and name 'lidar_bridge'[0m
+[0.661s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.661s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) by extension 'ignore'
+[0.661s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) ignored
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extension 'ignore'
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extension 'ignore_ament_install'
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extensions ['colcon_pkg']
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extension 'colcon_pkg'
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extensions ['colcon_meta']
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extension 'colcon_meta'
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extensions ['ros']
+[0.662s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_bridge) by extension 'ros'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/odom_bridge' with type 'ros.ament_cmake' and name 'odom_bridge'[0m
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extensions ['ignore', 'ignore_ament_install']
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extension 'ignore'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extension 'ignore_ament_install'
+[0.664s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extensions ['colcon_pkg']
+[0.665s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extension 'colcon_pkg'
+[0.665s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extensions ['colcon_meta']
+[0.665s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extension 'colcon_meta'
+[0.665s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extensions ['ros']
+[0.665s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/odom_tester) by extension 'ros'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/odom_tester' with type 'ros.ament_cmake' and name 'odom_tester'[0m
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extension 'ignore'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extension 'ignore_ament_install'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extensions ['colcon_pkg']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extension 'colcon_pkg'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extensions ['colcon_meta']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extension 'colcon_meta'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extensions ['ros']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/qos_relay) by extension 'ros'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/qos_relay' with type 'ros.ament_python' and name 'qos_relay'[0m
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extensions ['ignore', 'ignore_ament_install']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extension 'ignore'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extension 'ignore_ament_install'
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extensions ['colcon_pkg']
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extension 'colcon_pkg'
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extensions ['colcon_meta']
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extension 'colcon_meta'
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extensions ['ros']
+[0.668s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/utlidar_launcher) by extension 'ros'
+[0.669s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/utlidar_launcher' with type 'ros.ament_cmake' and name 'utlidar_launcher'[0m
+[0.669s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.669s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.669s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.669s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.669s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.699s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.699s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.705s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 2 installed packages in /home/arpan/unitree2/mid360_slam_ws/install[0m
+[0.705s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 2 installed packages in /home/arpan/unitree2/fast-lio-ws/install[0m
+[0.706s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 12 installed packages in /home/arpan/turtlebot3_ws/install[0m
+[0.707s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 1 installed packages in /home/arpan/unitree2/ws_livox/install[0m
+[0.708s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 5 installed packages in /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install[0m
+[0.710s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 368 installed packages in /opt/ros/humble[0m
+[0.712s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_args' from command line to 'None'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_target' from command line to 'None'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'lidar_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.776s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'lidar_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge', 'merge_install': False, 'path': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/lidar_bridge', 'symlink_install': False, 'test_result_base': None}[0m
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_args' from command line to 'None'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_target' from command line to 'None'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'odom_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge', 'merge_install': False, 'path': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge', 'symlink_install': False, 'test_result_base': None}[0m
+[0.777s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_args' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_target' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_clean_cache' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_clean_first' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'cmake_force_configure' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'ament_cmake_args' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'catkin_cmake_args' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'odom_tester' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'odom_tester' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester', 'merge_install': False, 'path': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_tester', 'symlink_install': False, 'test_result_base': None}[0m
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_args' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_target' from command line to 'None'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_clean_cache' from command line to 'False'
+[0.778s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_clean_first' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'cmake_force_configure' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'ament_cmake_args' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'catkin_cmake_args' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'qos_relay' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'qos_relay' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay', 'merge_install': False, 'path': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/qos_relay', 'symlink_install': False, 'test_result_base': None}[0m
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_args' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_target' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_clean_cache' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_clean_first' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'cmake_force_configure' from command line to 'False'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'ament_cmake_args' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'catkin_cmake_args' from command line to 'None'
+[0.779s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'utlidar_launcher' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.780s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'utlidar_launcher' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher', 'merge_install': False, 'path': '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/utlidar_launcher', 'symlink_install': False, 'test_result_base': None}[0m
+[0.780s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.781s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.781s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/lidar_bridge' with build type 'ament_cmake'
+[0.781s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/lidar_bridge'
+[0.789s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.789s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.789s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.797s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge' with build type 'ament_cmake'
+[0.798s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_bridge'
+[0.798s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.798s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.806s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_tester' with build type 'ament_cmake'
+[0.806s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/odom_tester'
+[0.806s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.806s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.814s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/qos_relay' with build type 'ament_python'
+[0.814s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('qos_relay', 'ament_prefix_path')
+[0.814s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/ament_prefix_path.ps1'
+[0.815s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/ament_prefix_path.dsv'
+[0.816s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/ament_prefix_path.sh'
+[0.817s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.817s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.824s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/utlidar_launcher' with build type 'ament_cmake'
+[0.824s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/utlidar_launcher'
+[0.825s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.825s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.839s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge -- -j12 -l12[0m
+[0.843s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge -- -j12 -l12[0m
+[0.847s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester -- -j12 -l12[0m
+[1.262s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/qos_relay'
+[1.262s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.262s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.276s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge -- -j12 -l12[0m
+[1.292s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge[0m
+[1.296s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher -- -j12 -l12[0m
+[1.297s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester -- -j12 -l12[0m
+[1.299s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester[0m
+[1.300s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge -- -j12 -l12[0m
+[1.301s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge[0m
+[1.312s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(odom_bridge)
+[1.313s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_bridge[0m
+[1.327s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge' for CMake module files
+[1.328s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge' for CMake config files
+[1.328s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('odom_bridge', 'cmake_prefix_path')
+[1.328s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.ps1'
+[1.329s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.dsv'
+[1.329s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.sh'
+[1.330s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib'
+[1.331s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/bin'
+[1.331s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib/pkgconfig/odom_bridge.pc'
+[1.331s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib/python3.10/site-packages'
+[1.331s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/bin'
+[1.332s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.ps1'
+[1.333s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.dsv'
+[1.333s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.sh'
+[1.334s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.bash'
+[1.335s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.zsh'
+[1.336s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/colcon-core/packages/odom_bridge)
+[1.337s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(odom_bridge)
+[1.337s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge' for CMake module files
+[1.338s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge' for CMake config files
+[1.338s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('odom_bridge', 'cmake_prefix_path')
+[1.338s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.ps1'
+[1.339s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.dsv'
+[1.339s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/hook/cmake_prefix_path.sh'
+[1.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib'
+[1.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/bin'
+[1.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib/pkgconfig/odom_bridge.pc'
+[1.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib/python3.10/site-packages'
+[1.341s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/bin'
+[1.341s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.ps1'
+[1.342s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.dsv'
+[1.342s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.sh'
+[1.343s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.bash'
+[1.344s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.zsh'
+[1.344s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/colcon-core/packages/odom_bridge)
+[1.346s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lidar_bridge)
+[1.346s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge' for CMake module files
+[1.347s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge[0m
+[1.348s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge' for CMake config files
+[1.348s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lidar_bridge', 'cmake_prefix_path')
+[1.348s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.ps1'
+[1.349s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.dsv'
+[1.349s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.sh'
+[1.350s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib'
+[1.350s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/bin'
+[1.350s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib/pkgconfig/lidar_bridge.pc'
+[1.350s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib/python3.10/site-packages'
+[1.351s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/bin'
+[1.351s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.ps1'
+[1.352s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.dsv'
+[1.352s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.sh'
+[1.353s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.bash'
+[1.353s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.zsh'
+[1.354s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/colcon-core/packages/lidar_bridge)
+[1.354s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(lidar_bridge)
+[1.355s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge' for CMake module files
+[1.356s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge' for CMake config files
+[1.356s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('lidar_bridge', 'cmake_prefix_path')
+[1.356s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.ps1'
+[1.357s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.dsv'
+[1.358s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/hook/cmake_prefix_path.sh'
+[1.359s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib'
+[1.359s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/bin'
+[1.359s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib/pkgconfig/lidar_bridge.pc'
+[1.359s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/lib/python3.10/site-packages'
+[1.360s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/bin'
+[1.360s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.ps1'
+[1.361s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.dsv'
+[1.361s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.sh'
+[1.362s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.bash'
+[1.363s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/lidar_bridge/package.zsh'
+[1.363s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/lidar_bridge/share/colcon-core/packages/lidar_bridge)
+[1.363s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(odom_tester)
+[1.364s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester' for CMake module files
+[1.366s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/odom_tester[0m
+[1.366s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester' for CMake config files
+[1.366s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('odom_tester', 'cmake_prefix_path')
+[1.366s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.ps1'
+[1.367s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.dsv'
+[1.367s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.sh'
+[1.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib'
+[1.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/bin'
+[1.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/pkgconfig/odom_tester.pc'
+[1.369s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/python3.10/site-packages'
+[1.369s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/bin'
+[1.369s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.ps1'
+[1.370s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.dsv'
+[1.371s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.sh'
+[1.371s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.bash'
+[1.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.zsh'
+[1.373s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/colcon-core/packages/odom_tester)
+[1.374s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(odom_tester)
+[1.374s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester' for CMake module files
+[1.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester' for CMake config files
+[1.376s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('odom_tester', 'cmake_prefix_path')
+[1.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.ps1'
+[1.377s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.dsv'
+[1.377s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/hook/cmake_prefix_path.sh'
+[1.378s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib'
+[1.378s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/bin'
+[1.378s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/pkgconfig/odom_tester.pc'
+[1.378s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/python3.10/site-packages'
+[1.379s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/bin'
+[1.379s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.ps1'
+[1.380s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.dsv'
+[1.381s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.sh'
+[1.381s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.bash'
+[1.382s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.zsh'
+[1.382s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/colcon-core/packages/odom_tester)
+[1.384s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher -- -j12 -l12[0m
+[1.387s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher[0m
+[1.402s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(utlidar_launcher)
+[1.403s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher' for CMake module files
+[1.404s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --install /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/utlidar_launcher[0m
+[1.405s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher' for CMake config files
+[1.405s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('utlidar_launcher', 'cmake_prefix_path')
+[1.406s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.ps1'
+[1.406s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.dsv'
+[1.407s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.sh'
+[1.408s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/bin'
+[1.408s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/lib/pkgconfig/utlidar_launcher.pc'
+[1.409s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/lib/python3.10/site-packages'
+[1.409s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/bin'
+[1.409s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.ps1'
+[1.410s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.dsv'
+[1.410s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.sh'
+[1.411s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.bash'
+[1.411s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.zsh'
+[1.412s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/colcon-core/packages/utlidar_launcher)
+[1.413s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(utlidar_launcher)
+[1.413s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher' for CMake module files
+[1.414s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher' for CMake config files
+[1.414s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('utlidar_launcher', 'cmake_prefix_path')
+[1.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.ps1'
+[1.415s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.dsv'
+[1.415s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/hook/cmake_prefix_path.sh'
+[1.416s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/bin'
+[1.416s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/lib/pkgconfig/utlidar_launcher.pc'
+[1.417s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/lib/python3.10/site-packages'
+[1.417s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/bin'
+[1.417s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.ps1'
+[1.418s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.dsv'
+[1.418s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.sh'
+[1.419s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.bash'
+[1.420s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/utlidar_launcher/package.zsh'
+[1.420s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/utlidar_launcher/share/colcon-core/packages/utlidar_launcher)
+[1.880s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/qos_relay': PYTHONPATH=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qos_relay build --build-base /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/build install --record /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/install.log --single-version-externally-managed install_data[0m
+[2.320s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay' for CMake module files
+[2.321s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/src/qos_relay' returned '0': PYTHONPATH=/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qos_relay build --build-base /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/build install --record /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/qos_relay/install.log --single-version-externally-managed install_data[0m
+[2.321s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay' for CMake config files
+[2.322s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/lib'
+[2.322s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/bin'
+[2.322s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/lib/pkgconfig/qos_relay.pc'
+[2.323s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/lib/python3.10/site-packages'
+[2.323s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('qos_relay', 'pythonpath')
+[2.323s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/pythonpath.ps1'
+[2.324s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/pythonpath.dsv'
+[2.324s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/hook/pythonpath.sh'
+[2.325s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/bin'
+[2.325s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(qos_relay)
+[2.325s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/package.ps1'
+[2.326s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/package.dsv'
+[2.327s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/package.sh'
+[2.327s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/package.bash'
+[2.328s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/qos_relay/package.zsh'
+[2.328s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/qos_relay/share/colcon-core/packages/qos_relay)
+[2.328s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[2.328s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[2.329s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[2.329s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[2.345s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.345s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.346s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[2.359s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[2.359s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/local_setup.ps1'
+[2.361s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/_local_setup_util_ps1.py'
+[2.362s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/setup.ps1'
+[2.365s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/local_setup.sh'
+[2.366s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/_local_setup_util_sh.py'
+[2.367s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/setup.sh'
+[2.369s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/local_setup.bash'
+[2.370s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/setup.bash'
+[2.373s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/local_setup.zsh'
+[2.373s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/setup.zsh'

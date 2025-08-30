@@ -18,9 +18,9 @@ slam_toolbox:
     #mode: "mapping"
     mode: "mapping"
     map_file_name: ""
-    map_update_interval: 1.0
-    resolution: 0.03  #meters per cell
-    minimum_travel_distance: 0.05
+    map_update_interval: 0.2
+    resolution: 0.08  #meters per cell
+    minimum_travel_distance: 0.02
 
 
     # ====================================================================

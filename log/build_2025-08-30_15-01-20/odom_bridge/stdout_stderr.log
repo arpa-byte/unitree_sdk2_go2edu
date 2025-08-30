@@ -1,0 +1,19 @@
+[35m[1mConsolidate compiler generated dependencies of target odom_bridge_node[0m
+[100%] Built target odom_bridge_node
+-- Install configuration: ""
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/lib/odom_bridge/odom_bridge_node
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/ament_index/resource_index/package_run_dependencies/odom_bridge
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/ament_index/resource_index/parent_prefix_path/odom_bridge
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/environment/ament_prefix_path.sh
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/environment/path.sh
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/environment/path.dsv
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/local_setup.bash
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/local_setup.sh
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/local_setup.zsh
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/local_setup.dsv
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.dsv
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/ament_index/resource_index/packages/odom_bridge
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/cmake/odom_bridgeConfig.cmake
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/cmake/odom_bridgeConfig-version.cmake
+-- Up-to-date: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_bridge/share/odom_bridge/package.xml
