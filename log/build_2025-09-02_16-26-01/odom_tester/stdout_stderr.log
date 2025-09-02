@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target odom_tester_node[0m
+[100%] Built target odom_tester_node
+-- Install configuration: ""
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/odom_tester/odom_tester_node
+-- Set runtime path of "/home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/lib/odom_tester/odom_tester_node" to ""
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/package_run_dependencies/odom_tester
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/parent_prefix_path/odom_tester
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/ament_prefix_path.sh
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/ament_prefix_path.dsv
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/path.sh
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/environment/path.dsv
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.bash
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.sh
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.zsh
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/local_setup.dsv
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.dsv
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/ament_index/resource_index/packages/odom_tester
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/cmake/odom_testerConfig.cmake
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/cmake/odom_testerConfig-version.cmake
+-- Installing: /home/arpan/unitree2/unitree_sdk2/utlidar_slam/install/odom_tester/share/odom_tester/package.xml

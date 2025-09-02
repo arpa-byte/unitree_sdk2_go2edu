@@ -27,6 +27,7 @@ _colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/ws_livox/ins
 _colcon_prefix_chain_powershell_source_script "/home/arpan/turtlebot3_ws/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/fast-lio-ws/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/mid360_slam_ws/install\local_setup.ps1"
+_colcon_prefix_chain_powershell_source_script "/home/arpan/unitree2/mid360_slamming_ws/install\local_setup.ps1"
 
 # source this prefix
 $env:COLCON_CURRENT_PREFIX=(Split-Path $PSCommandPath -Parent)

@@ -2,11 +2,14 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
     pkg_dir = get_package_share_directory('utlidar_launcher')
+    go2_localization_pkg = get_package_share_directory('go2_localization') # Get path to new package
+
     rviz_config = os.path.join(pkg_dir, 'rviz', 'slam_config.rviz')
     slam_params = os.path.join(pkg_dir, 'config', 'slam_mapper_params.yaml')
     pcl2scan_params = os.path.join(pkg_dir, 'config', 'pointcloud_to_laserscan_params.yaml')
@@ -22,26 +25,26 @@ def generate_launch_description():
         arguments=[LaunchConfiguration('network_interface')]
     )
 
-    # --- THIS IS THE NEW DYNAMIC ODOMETRY PUBLISHER ---
+    # Modified odom_bridge_node: It now publishes raw odom and imu, but does NOT publish TF.
     odom_bridge_node = Node(
         package='odom_bridge', executable='odom_bridge_node',
         name='odom_bridge_node', output='screen',
-        arguments=[LaunchConfiguration('network_interface')]
+        arguments=[LaunchConfiguration('network_interface')],
+        parameters=[{'publish_tf': False}] # CRITICAL: Disable TF publishing
     )
 
-
-    # The static odom->base_link publisher is now REMOVED.
+    # --- NEW: Launch the EKF from our go2_localization package ---
+    # This node will now be responsible for publishing the odom -> base_link transform.
+    ekf_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(go2_localization_pkg, 'launch', 'ekf.launch.py')
+        )
+    )
     
-    # This static transform is still required.
     base_to_lidar_tf_node = Node(
         package='tf2_ros', executable='static_transform_publisher',
         name='base_to_lidar_tf',
-        
-        #Original arguments:
-        arguments=['0.15', '0.0', '0.1', '0.0', '0.0', '0.0', 'base_link', 'utlidar_lidar']     
-        
-        #Quick fix done here to flip the lidar by 180 degrees. the fourth value was 0.0 yaw in radians originally, which is changed to 3.14159.
-        #arguments=['0.15', '0.0', '0.1', '3.14159', '0.0', '0.0', 'base_link', 'utlidar_lidar']     
+        arguments=['0.15', '0.0', '0.1', '0.0', '0.0', '0.0', 'base_link', 'utlidar_lidar']
     )
 
     pointcloud_to_laserscan_node = Node(
@@ -57,7 +60,9 @@ def generate_launch_description():
 
     slam_toolbox_node = Node(
         package='slam_toolbox', executable='async_slam_toolbox_node',
-        name='slam_toolbox', parameters=[slam_params]
+        name='slam_toolbox',
+        parameters=[slam_params],
+        remappings=[('scan', '/scan_reliable'), ('odom', '/odometry/filtered')] # Use the filtered odom
     )
 
     rviz_node = Node(
@@ -68,7 +73,8 @@ def generate_launch_description():
     return LaunchDescription([
         network_interface_arg,
         lidar_bridge_node,
-        odom_bridge_node, # ADDED
+        odom_bridge_node,
+        ekf_launch, # ADDED
         base_to_lidar_tf_node,
         pointcloud_to_laserscan_node,
         qos_relay_node,

@@ -1,0 +1,4 @@
+[0.039s] Invoking command in '/home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arpan/unitree2/mid360_slamming_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slamming_ws/install/mid360_slam:/home/arpan/unitree2/mid360_slam_ws/install/scan_qos_relay:/home/arpan/unitree2/mid360_slam_ws/install/mid360_slam:/home/arpan/unitree2/fast-lio-ws/install/go2_nav_helper:/home/arpan/turtlebot3_ws/install/turtlebot3_teleop:/home/arpan/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble /usr/bin/cmake --build /home/arpan/unitree2/unitree_sdk2/utlidar_slam/build/lidar_bridge -- -j12 -l12
+[0.350s] [ 50%] [32mBuilding CXX object CMakeFiles/lidar_bridge_node.dir/src/lidar_bridge_node.cpp.o[0m
+[6.578s] [100%] [32m[1mLinking CXX executable lidar_bridge_node[0m
+[7.034s] [100%] Built target lidar_bridge_node
